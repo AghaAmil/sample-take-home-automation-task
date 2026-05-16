@@ -118,7 +118,7 @@ Playwright tracing, screenshots, and videos are configured in `pyproject.toml` a
 ├── tests/            # Pytest suites grouped by test scenario
 ├── docs/             # Original instructions, test plan, and test cases
 └── docs/media_attachment/
-    └── *.png         # Screenshots used by the documentation
+    └── *.png, *.mov  # Screenshots and recordings used by the documentation
 ```
 
 ## Technologies

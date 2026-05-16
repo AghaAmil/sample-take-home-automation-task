@@ -2,7 +2,7 @@
 
 ## Application Overview
 
-The System Under Test is a single-file, browser-based Tic-Tac-Toe application implemented in `task_instructions/index.html`. It can be opened directly in a modern browser or served from a static local server. The application has no backend service;  user profile, statistics are stored in the browser's local storage.
+The System Under Test is a single-file, browser-based Tic-Tac-Toe application implemented in `index.html`. It can be opened directly in a modern browser or served from a static local server. The application has no backend service; user profiles and statistics are stored in the browser's local storage.
 
 It includes account creation and login, a player dashboard, AI opponent difficulty levels, hints, match result tracking, profile management, history, language selection, and theme selection.
 
@@ -22,7 +22,7 @@ It includes account creation and login, a player dashboard, AI opponent difficul
 - Account creation, login, logout, profile management, session persistence, and local storage behavior.
 - Core Tic-Tac-Toe gameplay, including board interactions, turn handling, difficulty selection, hints, win/loss/draw outcomes, invalid actions, and reset/new-game behavior.
 - Match history and player statistics, including recording, display, clearing, and account deletion impacts.
--  UI behavior across theme and language settings, including basic layout, readability, and state updates.
+- UI behavior across theme and language settings, including basic layout, readability, and state updates.
 - Automation candidates for unit, component, and end-to-end coverage.
 
 ### Out of Scope
@@ -30,7 +30,7 @@ It includes account creation and login, a player dashboard, AI opponent difficul
 As this project is a take-home assignment and not a real application, not all aspects of the Application Under Test are thoroughly tested and verified. The list of untested and unverified aspects is summarized below: 
 
 - The application will not undergo testing, verification, or automation in Persian language. However, translation issues or any other issue in Persian language will be addressed in the bug report.
-- Detailed design & elements validation as no design specification was provided.
+- Detailed design and element validation, as no design specification was provided.
 - Security validation beyond local storage risk identification because no real authentication or server-side storage exists.
 - Detailed evaluation of AI algorithm and game difficulty. **(It has serious bugs)**
 - Testing the web application on a mobile device.
@@ -41,7 +41,7 @@ Testing should begin with exploratory testing to understand the complete workflo
 
 - **Manual testing:** Use manual test execution for visual behavior, language/theme checks, confirmation dialogs, and exploratory edge cases.
 - **Exploratory testing:** Explore account setup, local storage persistence, active game interruption, repeated resets, difficulty changes, and browser reload behavior.
--  **Functional testing:** Validate each user-facing feature against observed behavior in the source code and screenshots.
+- **Functional testing:** Validate each user-facing feature against observed behavior in the source code and screenshots.
 - **UI testing:** Confirm page layout, visual state changes, disabled states, status text, winning highlights, and table rendering.
 
 Recommended E2E automation coverage for the assignment:
@@ -60,7 +60,7 @@ Recommended E2E automation coverage for the assignment:
 
 ## Test Environment
 
-- **Application environment:** Local static web application opened directly from `task_instructions/index.html` or served from a local static server.
+- **Application environment:** Local static web application opened directly from `index.html` or served from a local static server.
 - **Data storage:** Browser local storage only. Testers should clear local storage before clean test runs.
 - **Desktop browsers:** Current stable Chrome, Safari, Firefox, or Edge.
 - **Framework:** Playwright with Python (Playwright Pytest) 

@@ -216,8 +216,8 @@
 **Expected Result:**
 - The theme switches between light and dark modes.
 - Text, controls, and board cells remain readable.
-- The selected theme will not be changed after reload.
-- The theme changes apples to all application pages.
+- The selected theme remains unchanged after reload.
+- The theme change applies to all application pages.
 
 ### TC-12
 
@@ -464,7 +464,7 @@
 **Preconditions:**
 - A user is logged in.
 - The game is active.
-- It is the player player's turn.
+- It is the player's turn.
 - At least one empty cell is available.
 
 **Test Steps:**
@@ -495,7 +495,7 @@
 **Expected Result:**
 - `Get Hint` is disabled while the computer is thinking.
 - `Get Hint` is disabled after the game is complete.
-- No hint can be requested outside the player player's active turn.
+- No hint can be requested outside the player's active turn.
 
 ### TC-25
 
@@ -675,7 +675,7 @@
 - A user is logged in.
 - The Profile view is displayed.
 
-**Test Steps:
+**Test Steps:**
 1. Open the Profile page.
 2. Click `Delete Account`.
 3. In the confirmation dialog, choose `OK`.
