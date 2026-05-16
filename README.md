@@ -54,6 +54,7 @@ pytest --browser chromium
 ruff format --check .
 ruff check .
 pytest --browser chromium
+python tests/server_test.py
 ```
 
 Playwright tracing, screenshots, and videos are configured in `pyproject.toml` to
