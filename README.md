@@ -143,3 +143,7 @@ uv run ruff format --check .
 uv run ruff check .
 uv run pytest --browser chromium
 ```
+
+## Code of Conduct
+
+Keep communication respectful, constructive, and focused on the work. Harassment, discriminatory language, and personal attacks are not acceptable; maintainers may remove comments or contributions that violate these expectations.
