@@ -3,5 +3,27 @@ name = "sample-take-home-automation-task"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
-    "ruff>=0.15.12",
+    "pytest>=9.0.3",
+    "pytest-playwright>=0.7.2",
+    "python-dotenv>=1.2.2",
+    "ruff==0.15.13",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = [
+    "--import-mode=importlib",
+    "--strict-markers",
+    "--tracing=retain-on-failure",
+    "--screenshot=only-on-failure",
+    "--video=retain-on-failure",
+]
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "auto"
