@@ -1,0 +1,41 @@
+from collections.abc import Generator
+
+import pytest
+from playwright.sync_api import Page
+
+from utils.app_server import StaticAppServer
+from utils.app_server import create_app_server
+
+
+@pytest.fixture(scope="session", autouse=True)
+def app_server() -> Generator[StaticAppServer]:
+    app_server = create_app_server()
+    app_server.start()
+
+    try:
+        yield app_server
+    finally:
+        app_server.stop()
+
+
+@pytest.fixture(scope="session")
+def app_url(app_server: StaticAppServer) -> str:
+    return app_server.url
+
+
+@pytest.fixture
+def app_page(page: Page, app_url: str) -> Page:
+    """
+    Fixture to initialize and return a web page instance for testing.
+
+    Navigate the mentioned URL, clears the local
+    storage to ensure a clean state, and reloads the page.
+
+    :param page: A Playwright `Page` object representing the browser page.
+    :param app_url: A string representing the URL of the application to be tested.
+    :return: A Playwright `Page` object with the specified application loaded.
+    """
+    page.goto(app_url)
+    page.evaluate("localStorage.clear()")
+    page.reload(wait_until="networkidle")
+    return page
