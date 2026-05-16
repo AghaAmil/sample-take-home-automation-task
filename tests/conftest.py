@@ -1,10 +1,27 @@
+import sys
 from collections.abc import Generator
+from pathlib import Path
 
 import pytest
 from playwright.sync_api import Page
 
-from utils.app_server import StaticAppServer
-from utils.app_server import create_app_server
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SRC_ROOT = PROJECT_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from utils.app_server import StaticAppServer  # noqa: E402
+from utils.app_server import create_app_server  # noqa: E402
+
+
+@pytest.fixture(scope="session")
+def project_root() -> Path:
+    return PROJECT_ROOT
+
+
+@pytest.fixture(scope="session")
+def src_root() -> Path:
+    return SRC_ROOT
 
 
 @pytest.fixture(scope="session", autouse=True)
