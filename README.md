@@ -1,16 +1,32 @@
 # sample-take-home-automation-task
 
 Python Playwright automation scaffold for the Tic-Tac-Toe take-home application in
-`task_instructions/index.html`.
+`index.html`.
 
 ## Application Under Test
 
 The supplied app is a static single-page web application. The automated tests serve
-`task_instructions/` through a local HTTP server and open:
+the configured app root through a local HTTP server and open:
 
 ```text
 http://127.0.0.1:<port>/index.html
 ```
+
+The original task instructions live in `docs/INSTRUCTIONS.md`.
+
+## Configuration
+
+Runtime test configuration is loaded from `.env` in the project root:
+
+```dotenv
+APP_HOST=127.0.0.1
+APP_PORT=0
+APP_ROOT=.
+APP_ENTRYPOINT=index.html
+```
+
+`.env` is ignored by Git for local overrides. Keep `.env.example` updated when
+configuration keys change.
 
 ## Setup
 
