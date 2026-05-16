@@ -4,7 +4,7 @@ from pathlib import Path
 from uuid import uuid4
 
 import pytest
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SRC_ROOT = PROJECT_ROOT / "src"
@@ -86,3 +86,16 @@ def profile_page(app_page: Page) -> GameDashboardProfileViewPage:
 @pytest.fixture
 def history_page(app_page: Page) -> GameDashboardHistoryViewPage:
     return GameDashboardHistoryViewPage(app_page)
+
+
+@pytest.fixture
+def logged_in_player_name(
+    account_creation_page: AccountCreationPage,
+    play_page: GameDashboardViewPlayPage,
+    player_name: str,
+) -> str:
+    account_creation_page.assert_loaded()
+    account_creation_page.fill_player_name(player_name)
+    account_creation_page.submit_create_account()
+    expect(play_page.view_play).to_be_visible()
+    return player_name
