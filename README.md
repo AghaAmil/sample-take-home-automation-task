@@ -54,8 +54,16 @@ pytest --browser chromium
 ruff format --check .
 ruff check .
 pytest --browser chromium
+pytest --browser chromium --headed
+pytest --browser firefox
+pytest --browser webkit
+pytest --browser chromium --browser-channel chrome
 python tests/server_test.py
 ```
+
+Playwright runs headless by default. Add `--headed` to watch the browser. Use
+`webkit` for Safari-family coverage, or Chromium with `--browser-channel chrome`
+to run installed Google Chrome.
 
 Playwright tracing, screenshots, and videos are configured in `pyproject.toml` to
 retain artifacts on failures.
