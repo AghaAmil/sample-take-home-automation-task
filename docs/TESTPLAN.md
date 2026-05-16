@@ -32,12 +32,12 @@ As this project is a take-home assignment and not a real application, not all as
 - The application will not undergo testing, verification, or automation in Persian language. However, translation issues or any other issue in Persian language will be addressed in the bug report.
 - Detailed design & elements validation as no design specification was provided.
 - Security validation beyond local storage risk identification because no real authentication or server-side storage exists.
-- Detailed evaluation of AI algorithm and game difficulty.
+- Detailed evaluation of AI algorithm and game difficulty. **(It has serious bugs)**
 - Testing the web application on a mobile device.
 
 ## 4. Test Approach and Strategy
 
-Testing should begin with exploratory testing to understand the complete workflow and identify risks before formal test case execution. Because this is a take-home assignment with a small static app, the strategy should prioritize critical paths and high-value edge cases while still showing a clear path to automation.
+Testing should begin with exploratory testing to understand the complete workflow and identify risks before formal test case execution. Additionally human judgment and manual activities are required to test the computer behavior and game difficulty.
 
 - **Manual testing:** Use manual test execution for visual behavior, language/theme checks, confirmation dialogs, and exploratory edge cases.
 - **Exploratory testing:** Explore account setup, local storage persistence, active game interruption, repeated resets, difficulty changes, and browser reload behavior.
